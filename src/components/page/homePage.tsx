@@ -139,13 +139,13 @@ function HomePage() {
             </div>
 
             {/* Game Cards */}
-            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2">
               {games.map(game => (
                 <a href={game.link} key={game.id} className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 border shadow-2xl border-gray-400 cursor-pointer">
                   <div className="relative">
 
                     <img
-                      className="w-full object-cover h-48 md:h-56 lg:h-64"
+                      className="w-full object-cover  md:h-56 lg:h-64"
                       src={game.image}
                       alt={game.name}
                     />
@@ -153,11 +153,11 @@ function HomePage() {
                       <span className="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Popular</span>
                     </div>
                   </div>
-                  <div className="p-2 text-center">
+                  <div className="p-2 text-center flex flex-col gap-2">
                     <h3 className="text-sm md:text-base font-bold text-gray-800">{game.name}</h3>
                     <div className="mt-2 flex justify-center border-t border-gray-100">
                       <a href={game.link}>
-                      <button  className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition flex items-center">
+                      <button  className="bg-gradient-to-r  from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition flex items-center">
                         <p>Top-Up</p>
                       </button>
                       </a>
