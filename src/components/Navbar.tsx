@@ -4,7 +4,7 @@ export const Navbar = () => {
         <div>
             {/* Navbar */}
             <nav className="bg-white shadow-md sticky top-0 z-50">
-                <div className="max-w-screen-xl mx-auto px-4">
+                <div className="max-w-screen-lg mx-auto px-4">
                     <div className="flex justify-between items-center h-16">
                         <div className="flex items-center">
                             <a href="/" className="flex items-center">

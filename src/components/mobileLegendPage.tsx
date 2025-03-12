@@ -23,13 +23,6 @@ function MobileLegendPage() {
       bonus: 'Event Topup +100',
       price: 'Rp55.822',
       category: 'pass'
-    },
-    {
-      id: 'twilight-pass',
-      name: 'Twilight Pass',
-      bonus: '',
-      price: 'Rp160.151',
-      category: 'pass'
     }
   ];
   
@@ -355,7 +348,7 @@ function MobileLegendPage() {
             )}
             
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Email (opsional)</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
               <input
                 type="email"
                 value={email}

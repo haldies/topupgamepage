@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import { AiOutlineSafety } from 'react-icons/ai';
+import { FaRegClock } from 'react-icons/fa';
+import { MdOutlineSupportAgent } from 'react-icons/md';
 
 
 function HomePage() {
@@ -37,7 +40,8 @@ function HomePage() {
     {
       id: 1,
       name: "Mobile Legends",
-      image: "https://play-lh.googleusercontent.com/eOSTyn3tnJrezNp0pBV-grARGI8xWM0ylM0fZYoV-ZFaY52wCjyRwn0uIsWrAhQjzg"
+      image: "https://play-lh.googleusercontent.com/eOSTyn3tnJrezNp0pBV-grARGI8xWM0ylM0fZYoV-ZFaY52wCjyRwn0uIsWrAhQjzg",
+      link : "/mobilelegend"
     },
     {
       id: 2,
@@ -62,8 +66,8 @@ function HomePage() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-   
+    <div className="bg-gray-50 min-h-screen max-w-screen-lg mx-auto px-4">
+
 
       {/* Carousel */}
       <div className="relative w-full overflow-hidden">
@@ -135,12 +139,13 @@ function HomePage() {
             </div>
 
             {/* Game Cards */}
-            <div className="grid grid-cols-3 md:grid-cols-3 sm:grid-cols-3 gap-6 ">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {games.map(game => (
-                <div key={game.id} className="bg-white rounded-xl  overflow-hidden hover:shadow-lg transition-shadow duration-300 border shadow-2xl border-gray-400 ">
+                <a href={game.link} key={game.id} className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 border shadow-2xl border-gray-400 cursor-pointer">
                   <div className="relative">
+
                     <img
-                      className="w-full  object-cover"
+                      className="w-full object-cover h-48 md:h-56 lg:h-64"
                       src={game.image}
                       alt={game.name}
                     />
@@ -149,26 +154,22 @@ function HomePage() {
                     </div>
                   </div>
                   <div className="p-2 text-center">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <h3 className="text-sm font-bold text-gray-800">{game.name}</h3>
-                      </div>
-                    </div>
+                    <h3 className="text-sm md:text-base font-bold text-gray-800">{game.name}</h3>
                     <div className="mt-2 flex justify-center border-t border-gray-100">
-                      <div className="flex items-center">
-                        <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition flex items-center ">
-                          <p>Top-Up</p>
-                        </button>
-                      </div>
+                      <a href={game.link}>
+                      <button  className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition flex items-center">
+                        <p>Top-Up</p>
+                      </button>
+                      </a>
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
             {/* View More Button */}
             <div className="mt-8 text-center">
-              <button className="bg-white border border-indigo-600 text-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-50 transition font-medium">
+              <button className="bg-white border border-indigo-600 text-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-50 transition font-medium cursor-pointer">
                 View More Games
               </button>
             </div>
@@ -184,9 +185,7 @@ function HomePage() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="bg-indigo-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                  <FaRegClock size={30} className="text-indigo-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-800">Fast Delivery</h3>
                 <p className="mt-2 text-gray-600">Get your game credits instantly after payment</p>
@@ -194,9 +193,7 @@ function HomePage() {
 
               <div className="text-center">
                 <div className="bg-indigo-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
+                  <AiOutlineSafety size={30} className="text-indigo-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-800">Secure Transactions</h3>
                 <p className="mt-2 text-gray-600">Your payments are protected with encryption</p>
@@ -204,9 +201,7 @@ function HomePage() {
 
               <div className="text-center">
                 <div className="bg-indigo-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
+                  <MdOutlineSupportAgent size={30} className=" text-indigo-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-800">24/7 Support</h3>
                 <p className="mt-2 text-gray-600">Our customer service team is always ready to help</p>
@@ -216,8 +211,8 @@ function HomePage() {
         </div>
       </main>
 
-   
-  
+
+
     </div>
 
   );

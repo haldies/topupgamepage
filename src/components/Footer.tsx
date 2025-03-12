@@ -3,7 +3,7 @@ export const Footer = () => {
   return (
     <div>
            <footer className="bg-gray-900 text-white">
-        <div className="max-w-screen-xl mx-auto px-4 pt-12 pb-8">
+        <div className="max-w-screen-lg mx-auto px-4 pt-12 pb-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">GameTopUp</h3>
