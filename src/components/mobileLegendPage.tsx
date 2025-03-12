@@ -2,7 +2,7 @@ import  { useState } from 'react';
 
 function MobileLegendPage() {
   const [selectedPackage, setSelectedPackage] = useState('');
-  const [selectedPayment, setSelectedPayment] = useState(null);
+  const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
   const [userId, setUserId] = useState('');
   const [zoneId, setZoneId] = useState('');
   const [email, setEmail] = useState('');
@@ -166,7 +166,7 @@ function MobileLegendPage() {
   };
 
   // Handle payment method selection
-  const handlePaymentSelect = (paymentId) => {
+  const handlePaymentSelect = (paymentId: string) => {
     setSelectedPayment(paymentId);
   };
 

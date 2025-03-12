@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/page/homePage";
 import MobileLegendPage from "./components/mobileLegendPage";
 import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/footer";
+import { Footer } from "./components/Footer";
+
 
 function App() {
   return (
