@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { AiOutlineSafety } from 'react-icons/ai';
 import { FaRegClock } from 'react-icons/fa';
 import { MdOutlineSupportAgent } from 'react-icons/md';
+import Category from '../Category';
 
 
 function HomePage() {
@@ -41,7 +42,7 @@ function HomePage() {
       id: 1,
       name: "Mobile Legends",
       image: "https://play-lh.googleusercontent.com/eOSTyn3tnJrezNp0pBV-grARGI8xWM0ylM0fZYoV-ZFaY52wCjyRwn0uIsWrAhQjzg",
-      link : "/mobilelegend"
+      link: "/mobilelegend"
     },
     {
       id: 2,
@@ -66,11 +67,9 @@ function HomePage() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen max-w-screen-lg mx-auto px-4">
-
-
+    <div className="mt-20 bg-gray-50 min-h-screen max-w-screen-lg mx-auto px-4">
       {/* Carousel */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden rounded-lg">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -91,7 +90,7 @@ function HomePage() {
         </div>
 
         {/* Carousel Controls */}
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 ">
           {carouselItems.map((_, index) => (
             <button
               key={index}
@@ -113,57 +112,40 @@ function HomePage() {
               <p className="mt-3 text-gray-600 max-w-2xl mx-auto">Get instant credits for your favorite games with secure and fast transactions.</p>
             </div>
 
-            {/* Search and Filter */}
-            <div className="bg-white p-4 rounded-lg shadow-md mb-8">
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="flex-grow">
-                  <input
-                    type="text"
-                    placeholder="Search games..."
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  />
-                </div>
-                <select className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                  <option value="">All Categories</option>
-                  <option value="mobile">Mobile Games</option>
-                  <option value="pc">PC Games</option>
-                  <option value="console">Console Games</option>
-                </select>
-                <select className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                  <option value="">Sort By: Popular</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="newest">Newest</option>
-                </select>
-              </div>
-            </div>
-
+          
+            <Category />
             {/* Game Cards */}
-            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {games.map(game => (
-                <a href={game.link} key={game.id} className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 border shadow-2xl border-gray-400 cursor-pointer">
+                <a
+                  href={game.link}
+                  key={game.id}
+                  className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 border shadow-2xl border-gray-400 cursor-pointer flex flex-col h-full"
+                >
                   <div className="relative">
-
                     <img
-                      className="w-full object-cover  md:h-56 lg:h-64"
+                      className="w-full object-cover md:h-56 lg:h-64"
                       src={game.image}
                       alt={game.name}
                     />
                     <div className="absolute top-1 right-1">
-                      <span className="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Popular</span>
+                      <span className="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                        Popular
+                      </span>
                     </div>
                   </div>
-                  <div className="p-2 text-center flex flex-col gap-2">
+                  <div className="p-2 text-center flex flex-col flex-grow ">
                     <h3 className="text-sm md:text-base font-bold text-gray-800">{game.name}</h3>
-                    <div className="mt-2 flex justify-center border-t border-gray-100">
-                      <a href={game.link}>
-                      <button  className="bg-gradient-to-r  from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition flex items-center">
-                        <p>Top-Up</p>
-                      </button>
+                    <div className="mt-auto border-t border-gray-100 pt-3">
+                      <a href={game.link} className="inline-block">
+                        <button className="p-2  md:px-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white sm:px-4  rounded-lg hover:opacity-90 transition flex items-center justify-center w-full">
+                          <p className="font-semibold">Top-Up</p>
+                        </button>
                       </a>
                     </div>
                   </div>
                 </a>
+
               ))}
             </div>
 

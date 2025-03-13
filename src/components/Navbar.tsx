@@ -3,7 +3,7 @@ export const Navbar = () => {
     return (
         <div>
             {/* Navbar */}
-            <nav className="bg-white shadow-md sticky top-0 z-50">
+            <nav className="bg-white shadow-md fixed w-full top-0 z-50">
                 <div className="max-w-screen-lg mx-auto px-4">
                     <div className="flex justify-between items-center h-16">
                         <div className="flex items-center">

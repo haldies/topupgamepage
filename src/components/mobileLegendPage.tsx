@@ -185,7 +185,7 @@ function MobileLegendPage() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen max-w-screen-lg mx-auto px-4 mt-20">
       {/* Header */}
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 py-12">
         <div className="max-w-4xl mx-auto px-4">
